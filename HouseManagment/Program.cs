@@ -29,7 +29,7 @@ builder.Services.AddScoped<IActivityService, ActivityService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.UseSwagger();
+app.UseSwagger(options => options.SerializeAsV2 = true);
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
