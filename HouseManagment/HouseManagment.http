@@ -4,3 +4,7 @@ GET {{HouseManagment_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+GET {{HouseManagment_HostAddress}}/api/activities
+Accept: application/json
+
+###
