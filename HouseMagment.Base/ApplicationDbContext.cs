@@ -1,8 +1,8 @@
-﻿using HouseManagment.Activities;
+﻿using HouseMagment.Application.Activities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace HouseManagment;
+namespace HouseMagment.Application;
 
 public class ApplicationDbContext : DbContext
 {
