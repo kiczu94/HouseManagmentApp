@@ -1,4 +1,4 @@
-﻿namespace HouseManagment.Infrastucture;
+﻿namespace HouseMagment.Application.Infrastucture;
 
 public interface IRepository<T>
 {

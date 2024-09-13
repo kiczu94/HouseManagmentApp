@@ -1,7 +1,8 @@
-﻿using HouseManagment.Activities;
-using HouseManagment.Activities.Services;
-using HouseManagment.Contracts.Activities;
-using HouseManagment.Infrastucture;
+﻿using HouseMagment.Application.Activities;
+using HouseManagment.Contracts.Activities.Commands;
+using HouseManagment.Contracts.Activities.Entities;
+using HouseManagment.Contracts.Activities.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,34 +13,32 @@ namespace HouseManagment.Controllers
     [ApiController]
     public class ActivityController : ControllerBase
     {
-        private readonly IActivityService activityService;
-        private readonly IRepository<Activity> repository;
+        private readonly IMediator mediator;
 
-        public ActivityController(IActivityService activityService, IRepository<Activity> repository)
+        public ActivityController(IMediator mediator)
         {
-            this.activityService = activityService;
-            this.repository = repository;
+            this.mediator = mediator;
         }
 
         // GET: api/<ActivityController>
         [HttpGet]
-        public async Task<IReadOnlyCollection<Activity>> Get()
+        public async Task<IReadOnlyCollection<ActivityItem>> Get()
         {
-            return await repository.GetAll();
+            return await mediator.Send(new GetAllActivities());
         }
 
         // GET api/<ActivityController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> Get(Guid id)
         {
-            return Ok(await repository.Get(id));
+            return Ok(await mediator.Send(new GetActivityDetails(id)));
         }
 
         // POST api/<ActivityController>
         [HttpPost]
         public async Task<ActionResult<Guid>> Post([FromBody] CreateActivity activity)
         {
-            return Ok(await activityService.AddActivity(activity));
+            return Ok(await mediator.Send(activity));
         }
 
         // PUT api/<ActivityController>/5

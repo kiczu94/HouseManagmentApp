@@ -1,7 +1,7 @@
-using HouseManagment;
-using HouseManagment.Activities;
-using HouseManagment.Activities.Services;
-using HouseManagment.Infrastucture;
+using HouseMagment.Application;
+using HouseMagment.Application.Activities;
+using HouseMagment.Application.Activities.Services;
+using HouseMagment.Application.Infrastucture;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,14 +17,18 @@ if (builder.Environment.IsDevelopment())
 {
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
     connection = builder.Configuration.GetConnectionString("DefaultConnection");
+    Environment.SetEnvironmentVariable("DefaultConnection", connection);
 }
 else
 {
-    connection = Environment.GetEnvironmentVariable("DefaultConnection");
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.json");
+    connection = builder.Configuration.GetConnectionString("DefaultConnection");
+    Environment.SetEnvironmentVariable("DefaultConnection", connection);
 }
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
 builder.Services.AddScoped<IRepository<Activity>, ActivityRepository>();
 builder.Services.AddScoped<IActivityService, ActivityService>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
 var app = builder.Build();
 

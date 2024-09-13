@@ -1,7 +1,7 @@
-﻿using HouseManagment.Contracts.Activities;
-using HouseManagment.Infrastucture;
+﻿using HouseMagment.Application.Infrastucture;
+using HouseManagment.Contracts.Activities.Commands;
 
-namespace HouseManagment.Activities.Services;
+namespace HouseMagment.Application.Activities.Services;
 
 public interface IActivityService
 {

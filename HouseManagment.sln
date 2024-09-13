@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseManagment", "HouseManagment\HouseManagment.csproj", "{2DE0208A-93BC-4BE3-BCB3-4A75B8FADAA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseManagment.Contracts", "HouseManagment.Contracts\HouseManagment.Contracts.csproj", "{DAAA2B46-3DDB-4E99-A765-28BEF0D569BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseManagment.Contracts", "HouseManagment.Contracts\HouseManagment.Contracts.csproj", "{DAAA2B46-3DDB-4E99-A765-28BEF0D569BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseMagment.Application", "HouseMagment.Base\HouseMagment.Application.csproj", "{FB5F7C4B-8609-4FBD-8D70-1E417699C0D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DAAA2B46-3DDB-4E99-A765-28BEF0D569BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAAA2B46-3DDB-4E99-A765-28BEF0D569BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAAA2B46-3DDB-4E99-A765-28BEF0D569BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5F7C4B-8609-4FBD-8D70-1E417699C0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5F7C4B-8609-4FBD-8D70-1E417699C0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5F7C4B-8609-4FBD-8D70-1E417699C0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5F7C4B-8609-4FBD-8D70-1E417699C0D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

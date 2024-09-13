@@ -1,9 +1,9 @@
 ﻿#nullable enable
-using HouseManagment;
-using HouseManagment.Infrastucture;
+using HouseMagment.Application;
+using HouseMagment.Application.Infrastucture;
 using Microsoft.EntityFrameworkCore;
 
-namespace HouseManagment.Activities;
+namespace HouseMagment.Application.Activities;
 
 public class ActivityRepository : IRepository<Activity>
 {

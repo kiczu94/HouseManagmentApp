@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace HouseManagment.Activities;
+namespace HouseMagment.Application.Activities;
 
 public class Activity
 {
